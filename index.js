@@ -19,7 +19,7 @@ var gulf = require('gulf')
   , domOT = require('dom-ot')
   , MutationSummary = require('mutation-summary')
  
-module.exports = function(contentcontenteditable) {
+module.exports = function(contenteditable) {
   var doc = new gulf.EditableDocument(new gulf.MemoryAdapter, domOT)
   doc._change = function(newcontent, changes) {
     observer.disconnect()
