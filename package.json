@@ -1,7 +1,7 @@
 {
   "name": "guf-contenteditable",
   "version": "0.1.0",
-  "description": "Gulf adapter for contenteditable elements (uses dom-ot)",
+  "description": "Convenient gulf wrapper for contenteditable elements (uses dom-ot)",
   "main": "index.js",
   "dependencies": {
     "mutation-summary": "^0.0.0"

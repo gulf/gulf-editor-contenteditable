@@ -1,5 +1,5 @@
 # gulf-contenteditable
-Convenient wrapper for contenteditable elements.
+Convenient [gulf](http://github.com/marcelklehr/gulf#readme) wrapper for contenteditable elements
 
 ## Install
 
@@ -20,7 +20,7 @@ var doc = bindEditor(editable)
 ### bindEditor(editable:DOMElement, [storageAdapter])
   * `editable` -- a contenteditable Element to be wired up with gulf
   * `storageAdapter` -- a gulf storage adapter (optional; defaults to the in-memory Adapter)
-  * *returns* the `gulf.EditableDocument` (see http://github.com/marcelklehr/gulf#readme)
+  * *returns* the `gulf.EditableDocument` (see [the gulf docs](http://github.com/marcelklehr/gulf#readme))
 
 
 ## Legal
