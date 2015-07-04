@@ -1,0 +1,26 @@
+{
+  "name": "guf-contenteditable",
+  "version": "0.1.0",
+  "description": "Gulf adapter for contenteditable elements (uses dom-ot)",
+  "main": "index.js",
+  "dependencies": {
+    "mutation-summary": "^0.0.0"
+  , "dom-ot": "1.x"
+  , "gulf": "0.4.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelklehr/gulf-contenteditable.git"
+  },
+  "keywords": [
+    "operational transformation",
+    "dom-ot",
+    "contenteditable"
+  ],
+  "author": "Marcel Klehr <mklehr@gmx.net>",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/marcelklehr/gulf-contenteditable/issues"
+  },
+  "homepage": "https://github.com/marcelklehr/gulf-contenteditable#readme"
+}
