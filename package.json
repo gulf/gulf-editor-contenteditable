@@ -6,7 +6,7 @@
   "dependencies": {
     "mutation-summary": "^0.0.0"
   , "dom-ot": "1.x"
-  , "gulf": "0.4.x"
+  , "gulf": "1.x"
   },
   "repository": {
     "type": "git",
