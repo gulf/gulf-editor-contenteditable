@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "mutation-summary": "^0.0.0",
-    "dom-ot": "1.x",
+    "dom-ot": "1.x"
+  },
+  "peerDependencies": {
     "gulf": "1.x"
   },
   "repository": {
