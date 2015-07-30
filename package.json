@@ -1,12 +1,12 @@
 {
   "name": "gulf-contenteditable",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Convenient gulf wrapper for contenteditable elements (uses dom-ot)",
   "main": "index.js",
   "dependencies": {
-    "mutation-summary": "^0.0.0"
-  , "dom-ot": "1.x"
-  , "gulf": "1.x"
+    "mutation-summary": "^0.0.0",
+    "dom-ot": "1.x",
+    "gulf": "1.x"
   },
   "repository": {
     "type": "git",
