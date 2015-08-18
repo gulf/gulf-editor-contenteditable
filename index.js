@@ -54,6 +54,7 @@ module.exports = function(contenteditable) {
     ],
     callback: onChange
   })
+  doc.mutationSummary = observer
 
   function onChange(summaries) {
     var ops = domOT.adapters.mutationSummary.import(summaries[0], contenteditable)
