@@ -21,6 +21,8 @@ var gulf = require('gulf')
  
 module.exports = function(contenteditable) {
   var doc = new gulf.EditableDocument(new gulf.MemoryAdapter, domOT)
+  doc.rootNode = contenteditable
+
   doc._change = function(newcontent, changes) {
     observer.disconnect()
     console.log(newcontent)
