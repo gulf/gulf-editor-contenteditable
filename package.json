@@ -7,7 +7,7 @@
     "mutation-summary": "^0.0.0"
   },
   "peerDependencies": {
-    "gulf": "1.x",
+    "gulf": "3.x",
     "dom-ot": "2.x"
   },
   "repository": {

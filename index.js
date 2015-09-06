@@ -23,29 +23,35 @@ module.exports = function(contenteditable) {
   var doc = new gulf.EditableDocument(new gulf.MemoryAdapter, domOT)
   doc.rootNode = contenteditable
 
-  doc._change = function(newcontent, changes) {
+  doc._setContents = function(newcontent, cb) {
     observer.disconnect()
-    console.log(newcontent)
-    if(changes) {
-      var ops = domOT.unpackOps(changes)
-      retainSelection(ops, function() {
-        ops.forEach(function(op) {
-          op.apply(contenteditable, /*index:*/true)
-        })
-      })
+    contenteditable.innerHTML = ''
+    for(var i=0; i<newcontent.childNodes.length; i++) {
+      contenteditable.appendChild(newcontent.childNodes[i].cloneNode(/*deep:*/true))
     }
-    else {
-      contenteditable.innerHTML = ''
-      for(var i=0; i<newcontent.childNodes.length; i++) {
-        contenteditable.appendChild(newcontent.childNodes[i].cloneNode(/*deep:*/true))
-      }
-      domOT.adapters.mutationSummary.createIndex(contenteditable)
-    }
+    domOT.adapters.mutationSummary.createIndex(contenteditable)
     observer.reconnect()
+    cb()
   }
 
-  doc._collectChanges = function() {
+  doc._change = function(changes, cb) {
+    observer.disconnect()
+    console.log('_change', changes)
+
+    var ops = domOT.unpackOps(changes)
+    retainSelection(ops, function() {
+      ops.forEach(function(op) {
+        op.apply(contenteditable, /*index:*/true)
+      })
+    })
+
+    observer.reconnect()
+    cb()
+  }
+
+  doc._collectChanges = function(cb) {
     // changes are automatically collected by MutationSummary
+    cb()
   }
   
   var observer = new MutationSummary({
