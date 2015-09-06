@@ -39,7 +39,7 @@ module.exports = function(contenteditable) {
     console.log('_change', changes)
 
     var ops = domOT.unpackOps(changes)
-    retainSelection(ops, function() {
+    retainSelection(doc.rootNode, ops, function() {
       ops.forEach(function(op) {
         op.apply(contenteditable, /*index:*/true)
       })
@@ -82,25 +82,19 @@ module.exports = function(contenteditable) {
   return doc
 }
 
-function retainSelection(ops, fn) {
-  var selection = window.getSelection()
+function retainSelection(rootNode, ops, fn) {
+  var selection = rootNode.ownerDocument.defaultView.getSelection()
         , ranges = []
   for(var i=0; i<selection.rangeCount; i++) {
     var range = selection.getRangeAt(i)
-    ranges.push(domOT.transformCursor(range, ops, contenteditable))
+    ranges.push(domOT.transformCursor(range, ops, rootNode))
   }
-  ranges = ranges.map(function(range) {
-    return { startContainer: range.startContainer
-            , startOffset: range.startOffset
-            , endContainer: range.endContainer
-            , endOffset: range.endOffset}
-  })
   fn()
   selection.removeAllRanges()
   ranges.forEach(function(r) {
     var range = new Range
-    range.setStart(r.startContainer, r.startOffset)
-    range.setEnd(r.endContainer, r.endOffset)
+    if(r.startContainer) range.setStart(r.startContainer, r.startOffset)
+    if(r.endContainer) range.setEnd(r.endContainer, r.endOffset)
     selection.addRange(range)
   })
 }
