@@ -26,4 +26,4 @@ var doc = bindEditor(editable)
 ## Legal
 (c) 2015 by Marcel Klehr
 
-GNU General Public License
+GNU Lesser General Public License
