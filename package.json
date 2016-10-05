@@ -1,18 +1,34 @@
 {
-  "name": "gulf-contenteditable",
-  "version": "4.0.1",
+  "name": "gulf-editor-contenteditable",
+  "version": "5.0.0",
   "description": "Convenient gulf wrapper for contenteditable elements (uses dom-ot)",
-  "main": "index.js",
+  "main": "lib/index.js",
   "dependencies": {
-    "mutation-summary": "^0.0.0"
+    "mutation-summary": "^0.0.0",
+    "babel-runtime": "^6.11.6",
+    "core-js": "2.x"
   },
   "peerDependencies": {
-    "gulf": "4.x",
+    "gulf": "5.x",
     "dom-ot": "2.x"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": ["transform-runtime"]
+  },
+  "devDependencies": {
+    "babel-cli": "6.x",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "6.x"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcelklehr/gulf-contenteditable.git"
+    "url": "git+https://github.com/marcelklehr/gulf-editor-contenteditable.git"
   },
   "keywords": [
     "operational transformation",
@@ -22,7 +38,7 @@
   "author": "Marcel Klehr <mklehr@gmx.net>",
   "license": "LGPL-3.0",
   "bugs": {
-    "url": "https://github.com/marcelklehr/gulf-contenteditable/issues"
+    "url": "https://github.com/marcelklehr/gulf-editor-contenteditable/issues"
   },
-  "homepage": "https://github.com/marcelklehr/gulf-contenteditable#readme"
+  "homepage": "https://github.com/marcelklehr/gulf-editor-contenteditable#readme"
 }
