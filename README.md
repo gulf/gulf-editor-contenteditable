@@ -1,5 +1,5 @@
 # gulf-editor-contenteditable
-[Gulf](http://github.com/marcelklehr/gulf#readme) bindings for contenteditable elements
+[Gulf](http://github.com/gulf/gulf#readme) bindings for contenteditable elements
 
 (This version is compatible with gulf v5 only. For a gulf v4 compatible package check out `gulf-contenteditable` on npm.)
 
@@ -26,7 +26,7 @@ var doc = new ContenteditableDocument({
 ## API
 ### class ContenteditableDocument({editorInstance:HTMLElement,...}) extends gulf.EditableDocument
   * `contenteditable` -- a contenteditable Element to be wired up with gulf
-  * `storageAdapter` -- a gulf storage adapter (optional; defaults to the in-memory Adapter)
+  * `storageAdapter` -- a gulf storage adapter
   * `ottype` -- the OT type, with this binding you'll want `dom-ot`
 
 
