@@ -1,6 +1,8 @@
 # gulf-editor-contenteditable
 [Gulf](http://github.com/marcelklehr/gulf#readme) bindings for contenteditable elements
 
+(This version is compatible with gulf v5 only. For a gulf v4 compatible package check out `gulf-contenteditable` on npm.)
+
 ## Install
 
 ```
