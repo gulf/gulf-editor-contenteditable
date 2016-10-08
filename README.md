@@ -6,28 +6,24 @@
 ## Install
 
 ```
-npm install --save gulf gulf-editor-contenteditable dom-ot
+npm install --save gulf-editor-contenteditable
 ```
 
 ## Usage
 
 ```
-const domOT = require('dom-ot')
 const ContenteditableDocument = require('gulf-editor-contenteditable')
 
-var editable = document.querySelecor('#doc[contenteditable]')
 var doc = new ContenteditableDocument({
-  storageAdapter: new gulf.MemoryAdapter
-, ottype: domOT
-, editorInstance: editable
+  editorInstance: document.querySelecor('#doc[contenteditable]')
 })
 ```
 
 ## API
 ### class ContenteditableDocument({editorInstance:HTMLElement,...}) extends gulf.EditableDocument
-  * `contenteditable` -- a contenteditable Element to be wired up with gulf
-  * `storageAdapter` -- a gulf storage adapter
-  * `ottype` -- the OT type, with this binding you'll want `dom-ot`
+  * `editorInstance` -- a contenteditable Element to be wired up with gulf
+  * `storageAdapter` -- (optional) a gulf storage adapter. Default is `gulf.MemoryAdapter`
+  * `ottype` -- (optional) the OT type to use. With this binding the default is `dom-ot`
 
 
 ## Legal
