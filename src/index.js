@@ -21,6 +21,7 @@ var gulf = require('gulf')
 
 class ContenteditableDocument extends gulf.EditableDocument {
   constructor(opts) {
+    opts.ottype = opts.ottype || domOT
     super(opts)
     if (!opts.editorInstance) throw new Error('No contenteditable HTMLElement passed')
     this.rootNode = opts.editorInstance
