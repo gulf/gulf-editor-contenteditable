@@ -4,13 +4,11 @@
   "description": "Convenient gulf wrapper for contenteditable elements (uses dom-ot)",
   "main": "lib/index.js",
   "dependencies": {
+    "gulf": "5.x",
+    "dom-ot": "2.x",
     "mutation-summary": "^0.0.0",
     "babel-runtime": "^6.11.6",
     "core-js": "2.x"
-  },
-  "peerDependencies": {
-    "gulf": "5.x",
-    "dom-ot": "2.x"
   },
   "scripts": {
     "build": "babel src --out-dir lib"
