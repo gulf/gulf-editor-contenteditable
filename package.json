@@ -1,6 +1,6 @@
 {
   "name": "gulf-editor-contenteditable",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Convenient gulf wrapper for contenteditable elements (uses dom-ot)",
   "main": "lib/index.js",
   "dependencies": {
@@ -17,7 +17,9 @@
     "presets": [
       "es2015"
     ],
-    "plugins": ["transform-runtime"]
+    "plugins": [
+      "transform-runtime"
+    ]
   },
   "devDependencies": {
     "babel-cli": "6.x",
