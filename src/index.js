@@ -90,7 +90,7 @@ class ContenteditableDocument extends gulf.EditableDocument {
   }
 }
 
-module.export = ContenteditableDocument
+module.exports = ContenteditableDocument
 
 function retainSelection(rootNode, ops, fn) {
   var selection = rootNode.ownerDocument.defaultView.getSelection()
