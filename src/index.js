@@ -32,7 +32,7 @@ class ContenteditableDocument extends gulf.EditableDocument {
       queries: [
         { all: true}
       ],
-      callback: (summaries) => this.onLocalChange(summaries)
+      callback: (summaries) => this._onLocalChange(summaries)
     })
   }
 
